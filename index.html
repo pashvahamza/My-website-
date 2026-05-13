@@ -1,51 +1,124 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Stylish Website</title>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #111827, #1f2937);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
 
-        .box {
-            padding: 40px;
-            border-radius: 20px;
-            background: rgba(255,255,255,0.1);
-            box-shadow: 0 0 20px rgba(0,0,0,0.4);
-        }
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#0f172a,#1e3a8a,#312e81);
+      overflow:hidden;
+    }
 
-        h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
+    .bg{
+      position:absolute;
+      width:300px;
+      height:300px;
+      background:rgba(255,255,255,0.08);
+      border-radius:50%;
+      filter:blur(40px);
+      animation:move 8s infinite alternate;
+    }
 
-        p {
-            font-size: 18px;
-            opacity: 0.8;
-        }
-    </style>
+    .bg:nth-child(1){
+      top:-100px;
+      left:-100px;
+    }
+
+    .bg:nth-child(2){
+      bottom:-100px;
+      right:-100px;
+      animation-delay:2s;
+    }
+
+    @keyframes move{
+      from{
+        transform:translateY(0px);
+      }
+      to{
+        transform:translateY(40px);
+      }
+    }
+
+    .card{
+      position:relative;
+      z-index:1;
+      width:90%;
+      max-width:400px;
+      padding:40px;
+      border-radius:25px;
+      background:rgba(255,255,255,0.1);
+      backdrop-filter:blur(15px);
+      text-align:center;
+      color:white;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+      animation:fade 1.5s ease;
+    }
+
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    h1{
+      font-size:38px;
+      margin-bottom:15px;
+    }
+
+    p{
+      font-size:18px;
+      color:#dbeafe;
+      margin-bottom:25px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 25px;
+      border-radius:30px;
+      text-decoration:none;
+      background:white;
+      color:#1e3a8a;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.08);
+      background:#dbeafe;
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="box">
-        <h1>Welcome</h1>
-        <p>My first deployed website 🚀</p>
-    </div>
+  <div class="bg"></div>
+  <div class="bg"></div>
+
+  <div class="card">
+    <h1>Hello 🚀</h1>
+    <p>Welcome to my stylish website.</p>
+
+    <a href="#" class="btn">Explore</a>
+  </div>
 
 </body>
 </html>
