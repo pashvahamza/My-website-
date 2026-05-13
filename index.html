@@ -3,121 +3,175 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Stylish Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Future Upload Space</title>
 
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, sans-serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
-    body{
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      background:linear-gradient(135deg,#0f172a,#1e3a8a,#312e81);
-      overflow:hidden;
+    body {
+      background: linear-gradient(135deg, #050816, #0f172a);
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    .bg{
-      position:absolute;
-      width:300px;
-      height:300px;
-      background:rgba(255,255,255,0.08);
-      border-radius:50%;
-      filter:blur(40px);
-      animation:move 8s infinite alternate;
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 0;
     }
 
-    .bg:nth-child(1){
-      top:-100px;
-      left:-100px;
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
     }
 
-    .bg:nth-child(2){
-      bottom:-100px;
-      right:-100px;
-      animation-delay:2s;
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #38bdf8;
+      text-shadow: 0 0 20px #38bdf8;
     }
 
-    @keyframes move{
-      from{
-        transform:translateY(0px);
+    .hero p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 30px;
+      border-radius: 12px;
+      background: #38bdf8;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #38bdf8;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 60px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 25px;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px rgba(56,189,248,0.4);
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+      color: #38bdf8;
+    }
+
+    .upload-box {
+      margin-top: 60px;
+      background: rgba(255,255,255,0.05);
+      padding: 35px;
+      border-radius: 20px;
+      text-align: center;
+      border: 1px dashed #38bdf8;
+    }
+
+    .upload-box h2 {
+      margin-bottom: 15px;
+      color: #38bdf8;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 70px;
+      padding: 20px;
+      color: #94a3b8;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
       }
-      to{
-        transform:translateY(40px);
+
+      .hero p {
+        font-size: 1rem;
       }
-    }
-
-    .card{
-      position:relative;
-      z-index:1;
-      width:90%;
-      max-width:400px;
-      padding:40px;
-      border-radius:25px;
-      background:rgba(255,255,255,0.1);
-      backdrop-filter:blur(15px);
-      text-align:center;
-      color:white;
-      box-shadow:0 8px 32px rgba(0,0,0,0.3);
-      animation:fade 1.5s ease;
-    }
-
-    @keyframes fade{
-      from{
-        opacity:0;
-        transform:translateY(20px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
-
-    h1{
-      font-size:38px;
-      margin-bottom:15px;
-    }
-
-    p{
-      font-size:18px;
-      color:#dbeafe;
-      margin-bottom:25px;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:12px 25px;
-      border-radius:30px;
-      text-decoration:none;
-      background:white;
-      color:#1e3a8a;
-      font-weight:bold;
-      transition:0.3s;
-    }
-
-    .btn:hover{
-      transform:scale(1.08);
-      background:#dbeafe;
     }
   </style>
 </head>
-
 <body>
 
-  <div class="bg"></div>
-  <div class="bg"></div>
+  <div class="container">
 
-  <div class="card">
-    <h1>Hello 🚀</h1>
-    <p>Welcome to my stylish website.</p>
+    <section class="hero">
+      <h1>Future Upload Space 🚀</h1>
+      <p>
+        Stylish modern website template ready for uploads, projects, images,
+        videos, and future content.
+      </p>
 
-    <a href="#" class="btn">Explore</a>
+      <a href="#upload" class="btn">Start Exploring</a>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Fast Upload</h2>
+        <p>
+          Add any content easily and update the website anytime.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Modern Design</h2>
+        <p>
+          Responsive neon UI with smooth animations and clean layout.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Future Ready</h2>
+        <p>
+          Use this website for projects, galleries, portfolios, or anything.
+        </p>
+      </div>
+    </section>
+
+    <section class="upload-box" id="upload">
+      <h2>Upload Section 📂</h2>
+      <p>
+        You can later replace this area with images, text, videos,
+        buttons, or any custom content.
+      </p>
+    </section>
+
+    <footer>
+      Website Successfully Designed ✨
+    </footer>
+
   </div>
 
 </body>
